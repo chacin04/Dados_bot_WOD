@@ -10,9 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ffmpeg-static": "^5.1.0",
-    "stream-to-array": "^2.3.0",
-    "telebot": "^1.4.1",
-    "ytdl-core": "^4.11.4"
+    "telebot": "^1.4.1"
   }
 }
