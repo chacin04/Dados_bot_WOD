@@ -4,7 +4,7 @@ const { ID } = require('../config.js')
 const bot = new TeleBot(ID);
 
 const horaActualVenezuela= ( msg ,props)=>{
-    const fechaVenezuela = dayjs().subtract(4,'hours') //hacemos esto por que el servidor esta en GTM 
+    const fechaVenezuela = dayjs().subtract(4,'hours').add(12,'minutes') //hacemos esto por que el servidor esta en GTM 
     const date = fechaVenezuela.format('YYYY-MM-DD')
     const hora = fechaVenezuela.format('HH:mm')
 
