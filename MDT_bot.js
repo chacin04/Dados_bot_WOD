@@ -15,9 +15,10 @@ bot.on([/^\/i (.+)$/, /^\/I (.+)$/], async (msg, props) => {
     let numeros = dato.split(" ");
     let numero = numeros[0];
     let personaje = numeros[1];
+    let personajeLength = numero[1] ? (numero[1]).length : 0;
     let mod = parseInt(numero);
     var x = Math.floor(Math.random() * 10) + 1;
-    if (mod >= 0 && mod < 30 && personaje) {
+    if (mod >= 0 && mod < 30 && personaje && personajeLength > 0 && personajeLength < 40) {
         let total = x + mod;
 
         const respuestaInsert = await insertarDatos(
@@ -63,7 +64,7 @@ bot.on(["/Print", "/print"], async (msg, props) => {
             .join("\n");
         const eliminarTabla = await eliminarIniciativas();
         if (eliminarTabla) {
-            const mensaje = `🧚🏻🧙🏼MUNDO DE TINIEBLAS 👻🧛‍♀️\n--INICIATIVA LIST--\n\n${resultadosMensaje}\n\nLanta iniciativa cuando termines turno`;
+            const mensaje = `🧚🏻🧙🏼MUNDO DE TINIEBLAS 👻🧛‍♀️\n--INICIATIVA LIST--\n\n${resultadosMensaje}\n\nLanza iniciativa cuando termines turno`;
             return bot.sendMessage(msg.chat.id, mensaje, {
                 replyToMessage: msg.message_id,
             });
