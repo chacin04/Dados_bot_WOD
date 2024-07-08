@@ -5,7 +5,8 @@
   "main": "MDT_bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "node MDT_bot.js"
   },
   "keywords": [],
   "author": "",
