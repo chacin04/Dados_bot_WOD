@@ -2,6 +2,7 @@ const TeleBot = require("telebot");
 const { ID } = require("./config.js");
 const bot = new TeleBot(ID);
 const { tiradaNormal } = require("./controllers/tiradaNormal.js");
+const { tiradav5 } = require("./controllers/tiradav5.js")
 const { horaActualVenezuela } = require("./controllers/horaKeiber.js");
 const {
     insertarDatos,
@@ -116,5 +117,15 @@ bot.on(
 bot.on(["/h", "/H"], (msg, props) => {
     horaActualVenezuela(msg, props);
 });
+
+bot.on(
+    [
+        /^\/v5 (.+)$/,
+        /^\/V5 (.+)$/
+    ],
+    (msg, props) => {
+        tiradav5(msg, props);
+    }
+);
 
 bot.start();
