@@ -38,7 +38,7 @@ const tiradav5 = (msg, props) => {
                 return (itemDado.dado == 10)? "🔟" :((itemDado.dado > 5) ? "✅" : "🟩")
             })+"\n --------------------------------------- \n"+ 
             resultadoCompleto.filter(i=>i.type=="e").map(itemDado=>{
-                return (itemDado.dado == 10)? "🔟" :((itemDado.dado == 1)? "❌" : ((itemDado.dado > 5) ? "✅" : "🟧"))
+                return (itemDado.dado == 10)? "🔟" :((itemDado.dado == 1)||(itemDado.dado == 2) ? "❌" : ((itemDado.dado > 5) ? "✅" : "🟧"))
             })).replaceAll(",", " ");
             // TERMINA EL TEXTO
 
